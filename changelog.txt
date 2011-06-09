@@ -1,0 +1,12 @@
+﻿
+This has changed in comparison with official 0.88d:
+---------------------------------------------------
+
+* rewrote Huruhelpdesk + User Sync Plugin to be J! 1.6 compatible
+* added German language
+* added possibility for default text per category (prefill description 
+  when selecting category while creating new ticket)
+* added index to joomla_id in huruhelpdesk_users (sync speedup)
+* corrected output of solution (details page) to include linebreaks
+* added 'Assigned'-icon on details page for admins (1 click less to get
+  to the next ticket)
