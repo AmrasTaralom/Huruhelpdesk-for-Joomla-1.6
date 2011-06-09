@@ -10,3 +10,4 @@ This has changed in comparison with official 0.88d:
 * corrected output of solution (details page) to include linebreaks
 * added 'Assigned'-icon on details page for admins (1 click less to get
   to the next ticket)
+  
