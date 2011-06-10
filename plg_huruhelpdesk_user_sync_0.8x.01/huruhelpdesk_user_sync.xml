@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension version="1.6" type="plugin" group="user">
+    <name>Huru Helpdesk - User Sync</name>
+	<author>James R. Erickson, J!1.6 porting by AmrasTaralom</author>
+	<copyright>James R. Erickson, 2009 and AmrasTaralom, 2011</copyright>
+	<license>GPLv2.0</license>
+	<authorEmail>james.r.erickson@gmail.com</authorEmail>
+	<creationDate>October 2009</creationDate>
+    <authorUrl>www.joomla.org</authorUrl>
+    <version>0.8x.01 beta_j16</version>
+    <description>
+			Automatically synchronizes Huru Helpdesk user table with Joomla user table as Joomla users are created or deleted. 
+	</description>
+    <files>
+        <filename plugin="huruhelpdesk_user_sync">huruhelpdesk_user_sync.php</filename>
+        <filename>index.html</filename>
+        <filename>readme.txt</filename>
+    </files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="isUser" type="radio" default="0" label="Assign 'User' level by default?" description="Set as Yes to automatically give imported Joomla accounts 'User' level access to Huru Helpdesk?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>        
+			</fieldset>
+		</fields>
+    </config>
+</extension>

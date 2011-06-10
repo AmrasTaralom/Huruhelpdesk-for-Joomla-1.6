@@ -1,0 +1,49 @@
+@media print {#toolbartools {display:none; visibility:hidden;}}
+
+button.cpanel {cursor: pointer; font-size: 10px; border: 1px solid silver; padding: 0px 2px; margin: 0px 1px;}
+span.delete  {background-color: #efefef; height: 12px; cursor: pointer; color: #F00; font-size: 8px; border: 1px solid silver; padding: 1px 3px; margin: 0px; margin-right: 5px !important; vertical-align: top;}
+input, select {font-size: 11px; border: 1px solid silver;}
+
+a.cpanel, select.cpanel, option.cpanel, input.cpanel {font-weight: normal;}
+.cpanelicon {vertical-align:middle; height:24px; margin: 5px;}
+.pagetitle {font-weight: bold; font-size: 150%; padding: 7px 0px;}
+/*.pagetitle {padding-left: 7px; border: 1px solid silver; background-color: #efefef;}**/
+
+table.toolbar {right:0px;}
+button.toolbar {cursor: pointer; font-size: 10px; padding: 0px; margin: 0px 5px; border: none; background: none;}
+.toolbaricon {vertical-align:middle; height:24px;}
+.userstatusicon {vertical-align:middle; height:16px;}
+
+table.problemlist {width: 100%; border: 1px solid silver; border-collapse: collapse;}
+table.problemlist th {background-color: #efefef;}
+td.problemlist, th.problemlist {border: 1px solid silver; text-align: center;}
+th.count {padding: 3px; color: #333; border: 1px solid silver;}
+a.listhead {font-weight: bold; text-decoration: underline;}
+
+/*td.pagination  div  div {text-align:center !important; margin: 5px 0px;}*/
+td.pagination  div  span {text-align:center !important; margin: 5px 0px;}
+.counter{display: none;}
+
+table.problemdetail, table.userlist {width: 100%; border: 1px solid silver; border-collapse: collapse;}
+td.problemdetail {vertical-align: top; border: none; border-collapse: collapse; padding: 0px 8px;}
+td.problemhead {text-align: center; background: #efefef; border: 1px solid silver; font-weight: bold;}
+.problemfieldname {font-weight: bold;}
+.problemcolumnhead {text-align: center;}
+.problemtext{width: 99%; height: 100px; background: #fff;}
+td.problemnote{border: 1px solid silver; background: #fafafa;}
+.notetext {padding: 5px 10px; }
+.searchtable td{padding: 3px 10px;}
+
+.attachtext {float: right;}
+input.fileupload {border: 1px solid silver; background-color: #fff;}
+
+#inouttitle{font-weight: bold; padding: 3px 0px; margin-bottom: 3px;}
+.toolbarmessage{font-weight: bold; vertical-align: bottom; padding: 5px 0px;}
+
+.totals{border-top: 1px solid silver; font-weight: bold;}
+table.reporttable {width: 100%; border: 1px solid silver; border-collapse: collapse;}
+table.reporttable th {background-color: #efefef;}
+
+.charttitle{ font-weight: bold; margin: 25px 0px; text-align: center; border: 1px solid silver;}
+.sortpointer {width: 8px; margin-left: 5px;}
+

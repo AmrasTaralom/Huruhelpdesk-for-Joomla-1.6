@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="component">
+	<name>Huru Helpdesk</name>
+	<version>0.88 (d) beta j16</version>
+	<author>James R. Erickson, J!1.6 porting by AmrasTaralom</author>
+	<copyright>James R. Erickson, 2010 and AmrasTaralom, 2011</copyright>
+	<license>GPLv2.0</license>
+	<authorEmail>james.r.erickson@gmail.com</authorEmail>
+	<authorEmail>amras-taralom@streber24.de</authorEmail>
+	<creationDate>October 2010</creationDate>
+	<description>
+		<![CDATA[
+			<p><b>Huru Helpdesk</b></p>
+			
+			<p>Version 0.88 (d) beta for Joomla 1.6</p>
+
+			<p>Huru Helpdesk is based on the ASP application Liberum Helpdesk (<a href="http://www.liberum.org">www.liberum.org</a>). 
+			Many thanks to the developers of Liberum</p>
+		]]>
+	</description>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install.huruhelpdesk.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">uninstall.huruhelpdesk.sql</file>
+		</sql>
+	</uninstall>
+
+	<scriptfile>install.huruhelpdesk.php</scriptfile>
+	
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>css</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>models</folder>
+		<folder>tables</folder>
+		<folder>views</folder>
+		<filename>huruhelpdesk.php</filename>
+	</files>
+	
+	<administration>
+		<menu>Huru Helpdesk</menu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>images</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>huruhelpdesk.php</filename>
+			<filename>install.huruhelpdesk.sql</filename>
+			<filename>uninstall.huruhelpdesk.sql</filename>
+			<filename>index.htm</filename>
+			<filename>readme.txt</filename>
+		</files>
+	</administration>
+	
+</extension>
