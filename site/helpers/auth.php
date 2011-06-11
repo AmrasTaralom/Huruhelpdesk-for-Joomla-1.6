@@ -32,20 +32,22 @@ See checkusermin() function to find user authority equal to or greater than that
 */
 function checkuser($usertype)
 {
+
+	$user =& JFactory::getUser();
+	$uid = $user->id;
+	$db =& JFactory::getDBO();
+	$query = 'SELECT group_id FROM #__user_usergroup_map WHERE user_id='.$uid;
+	$db->setQuery($query);
+	$res = $db->loadRow();
+	
+	//usergroup 8 = super admin in 1.6
+	define("JOOMLAADMIN", 8);
+	
 	switch($usertype)
 	{
 		case 'admin':
 			//check to see if the user is a Joomla Super Admin - who is always a Huru admin
-			$user =& JFactory::getUser();
-			$uid = $user->id;
-			
-			$db =& JFactory::getDBO();
-			$query = 'SELECT group_id FROM #__user_usergroup_map WHERE user_id='.$uid;
-			$db->setQuery($query);
-			$res = $db->loadRow();
-			
-			//usergroup 8 = super admin in 1.6 
-			if($res[0] == 8) return true;
+			if($res[0] == JOOMLAADMIN) return true;
 			
 			//check to see if the user is defined as a Huru admin in our user table
 			$query = 'SELECT isadmin FROM #__huruhelpdesk_users WHERE joomla_id='.$uid;
@@ -60,26 +62,30 @@ function checkuser($usertype)
 			
 			return false; //default action
 			break;
+			
 		case 'reports':
-			$user =& JFactory::getUser();
-			$uid = $user->id;
-
+			
+			//check to see if the user is a Joomla Super Admin - who is always a Huru admin
+			if($res[0] == JOOMLAADMIN) return true;
+			
 			//check to see if the user is defined as being allowed to view reports in our user table
 			$query = 'SELECT viewreports FROM #__huruhelpdesk_users WHERE joomla_id='.$uid;
 			$db =& JFactory::getDBO();
 			$db->setQuery($query);
-
+			
 			$viewreports = $db->loadRow();
-
+			
 			//the returned value will be either 1 (meaning the user can viewreports), 0 (meaning the user can not view reports),
 			//or null, meaning the user is not defined in the huru users table
 			if($viewreports[0] > 0) return true; 
 			
 			return false; //default action
 			break;
+			
 		case 'rep':
-			$user =& JFactory::getUser();
-			$uid = $user->id;
+			
+			//check to see if the user is a Joomla Super Admin - who is always a Huru admin
+			if($res[0] == JOOMLAADMIN) return true;
 			
 			//check to see if the user is defined as a rep in our user table
 			$query = 'SELECT isrep FROM #__huruhelpdesk_users WHERE joomla_id='.$uid;
@@ -94,23 +100,26 @@ function checkuser($usertype)
 			
 			return false; //default action
 			break;
+			
 		case 'user':
-			$user =& JFactory::getUser();
-			$uid = $user->id;
+			
+			//check to see if the user is a Joomla Super Admin - who is always a Huru admin
+			if($res[0] == JOOMLAADMIN) return true;
 			
 			//check to see if the user is defined as a Huru user in our user table
 			$query = 'SELECT isuser FROM #__huruhelpdesk_users WHERE joomla_id='.$uid;
 			$db =& JFactory::getDBO();
 			$db->setQuery($query);
-
+			
 			$isuser = $db->loadRow();
-
+			
 			//the returned value will be either 1 (meaning the user is a user), 0 (meaning the user is not a user),
 			//or null, meaning the user is not defined in the huru users table
 			if(isset($isuser[0]) && $isuser[0] > 0) return true; //##my201004071507. Remove warning. It was: if($isuser[0] > 0) return true; 
 			
 			return false; //default action
 			break;
+			
 		default:
 			return false;
 			break;

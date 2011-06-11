@@ -11,6 +11,7 @@ defined('_JEXEC') or die('Restricted Access');
 //check user auth level
 require_once JPATH_COMPONENT.DS.'helpers'.DS.'head.php';
 require_once JPATH_COMPONENT.DS.'helpers'.DS.'auth.php';
+$mainframe = &JFactory::getApplication();
 if(!checkusermin('user')) $mainframe->redirect('index.php', JText::_('ALERTNOTAUTH'));
 
 JTable::addIncludePath(JPATH_COMPONENT.DS.'tables');

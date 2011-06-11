@@ -11,6 +11,7 @@ defined('_JEXEC') or die('Restricted Access');
 //check user auth level
 require_once JPATH_COMPONENT_SITE.DS.'helpers'.DS.'head.php'; //sends us to the core helper files
 require_once JPATH_COMPONENT_SITE.DS.'helpers'.DS.'auth.php'; //sends us to the core helper files
+$mainframe = &JFactory::getApplication();
 if(!checkuser('admin')) $mainframe->redirect('index.php', JText::_('ALERTNOTAUTH'));
 
 // Load framework base classes
