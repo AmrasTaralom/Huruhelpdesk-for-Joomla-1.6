@@ -41,7 +41,7 @@ function checkuser($usertype)
 	$res = $db->loadRow();
 	
 	//usergroup 8 = super admin in 1.6
-	define("JOOMLAADMIN", 8);
+	if(!defined('JOOMLAADMIN')) define('JOOMLAADMIN', 8);
 	
 	switch($usertype)
 	{
