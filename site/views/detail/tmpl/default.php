@@ -63,11 +63,15 @@ if(JRequest::getVar('sitesearch')==1)
 			<?php
 				
 				foreach($this->catdefaults as $def){
-					echo 'Catdefault['.$def[1].'] = "'.str_replace(array("\r\n","\n"),'\n',$def[2]).'";';
+					echo 'Catdefault['.$def[1].'] = '.json_encode($def[2]).';';
 				}
 				
 			?>
-			if(Catdefault[id]) document.getElementById('descriptiontext').innerHTML = Catdefault[id];
+			if(Catdefault[id]){
+				document.getElementById('descriptiontext').innerHTML = Catdefault[id];
+			}else{
+				document.getElementById('descriptiontext').innerHTML = "";
+			}
 		}
 	</script>
 	<?php } ?>
