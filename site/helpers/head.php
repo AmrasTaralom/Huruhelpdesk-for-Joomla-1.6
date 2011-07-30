@@ -446,7 +446,7 @@ function safe($str)
 {
 //	if(get_magic_quotes_gpc()) $str = stripslashes($str); //removes any existing magic quotes escaping
 //	$str = mysql_real_escape_string($str); //escape \x00, \n, \r, \, ', " and \x1a
-	return $str;
+	return htmlspecialchars(strip_tags($str));
 }
 
 
