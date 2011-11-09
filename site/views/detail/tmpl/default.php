@@ -123,7 +123,7 @@ elseif(!closed($this->row->status) && ($editable || $newproblem || caseauthor($t
 else toolbar('print','close','refresh','home');
 
 ?>
-<form action="index.php?option=<?php echo JRequest::getCmd('option');?>" method="post" name="problem_form" id="problem_form" enctype="multipart/form-data">
+<form action="?option=<?php echo JRequest::getCmd('option');?>" method="post" name="problem_form" id="problem_form" enctype="multipart/form-data">
 	<table class="problemdetail">
 		
 		
