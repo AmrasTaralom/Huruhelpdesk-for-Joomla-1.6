@@ -163,7 +163,7 @@ else toolbar('refresh','printlist','home','submit');
 					if(!$printing)
 					{
 						?>
-						<a href="javascript:detail('<?php echo $row->id;?>');" class="listlink"><?php echo $row->title; ?></a>
+						<a href="<?php echo $link; ?>" class="listlink" onclick="javascript:detail('<?php echo $row->id;?>');"><?php echo $row->title; ?></a>
 						<?php
 					}
 					else echo $row->title;
