@@ -111,7 +111,7 @@ else toolbar('refresh','printlist','home','submit');
 				{
 					?>
 					<tr>
-						<?php if(false && $stype!='kb'){?><th align="center"><a href="javascript:setorder('id');" class="listhead"><?php echo lang('ID');?></a><img class="sortpointer" src="<?php if($order=='id') echo $sortimage;?>"></th><?php }?>
+						<?php if(true && $stype!='kb'){?><th align="center"><a href="javascript:setorder('id');" class="listhead"><?php echo lang('ID');?></a><img class="sortpointer" src="<?php if($order=='id') echo $sortimage;?>"></th><?php }?>
 						<th align="center"><a href="javascript:setorder('title');" class="listhead"><?php echo lang('Title');?></a><img class="sortpointer" src="<?php if($order=='title') echo $sortimage;?>"></th>
 						<?php if($stype!='kb'){?><th align="center"><a href="javascript:setorder('uid');" class="listhead"><?php echo lang('User');?></a><img class="sortpointer" src="<?php if($order=='uid') echo $sortimage;?>"></th><?php }?>
 						<?php if($type!='assigned'){?><th align="center"><a href="javascript:setorder('rep');" class="listhead"><?php echo lang('Rep');?></a><img class="sortpointer" src="<?php if($order=='rep') echo $sortimage;?>"></th><?php }?>
@@ -126,7 +126,7 @@ else toolbar('refresh','printlist','home','submit');
 				{
 					?>
 					<tr>
-						<?php if(false && $stype!='kb'){?><th align="center"><?php echo lang('ID');?></a></th><?php }?>
+						<?php if(true && $stype!='kb'){?><th align="center"><?php echo lang('ID');?></a></th><?php }?>
 						<th align="center"><?php echo lang('Title');?></a></th>
 						<?php if($stype!='kb'){?><th align="center"><?php echo lang('User');?></a></th><?php }?>
 						<?php if($type!='assigned'){?><th align="center"><?php echo lang('Rep');?></a></th><?php }?>
@@ -153,7 +153,7 @@ else toolbar('refresh','printlist','home','submit');
 			?>
 			
 			<tr>
-				<?php if(false && $stype!='kb'){?>
+				<?php if(true && $stype!='kb'){?>
 					<td align="center" class="problemlist"> 
 						<?php echo $row->id; ?>
 					</td>
