@@ -20,6 +20,7 @@ class HuruHelpDeskViewDetail extends JView
 	{
 		$mainframe = &JFactory::getApplication();
 		$option = JRequest::getCmd('option');
+		$db =& JFactory::getDBO();
 		
 		//page variables
 		$task = JRequest::getVar('task', '');
@@ -30,11 +31,11 @@ class HuruHelpDeskViewDetail extends JView
 		$this->assignRef('cid[]',$cid);
 		$this->assignRef('type',$type);
 		$this->assignRef('Itemid',$Itemid);
-
+		
 		//record detail
 		$row =& JTable::getInstance('Detail','Table');
 		$id = safe($cid[0]);
-
+		
 		if(!is_numeric($id)) $id = -1; //stops SQL injection that can occur with cid[] var passed in URL
 		
 		if($id == -1 && !empty($Itemid)) $id = safe($Itemid);
@@ -62,8 +63,14 @@ class HuruHelpDeskViewDetail extends JView
 			$this->assignRef('entered_by',$entered_by);
 			$this->assignRef('kb',$kb);
 			
+			//joomla id display
+			$query = "SELECT joomla_id FROM #__huruhelpdesk_users WHERE id=". $row->entered_by ." LIMIT 1;";
+			$db->setQuery($query);
+			$joomla_id = $db->loadResult();
+			$this->assignRef('joomla_id', $joomla_id);
+			
+			//pedefined texts for new tickets
 			if($id == -1){
-				$db =& JFactory::getDBO();
 				$query = "SELECT * FROM #__huruhelpdesk_categories_predeftext;";
 				$db->setQuery($query);
 				$result = $db->query();

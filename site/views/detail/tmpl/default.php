@@ -194,7 +194,7 @@ else toolbar('print','close','refresh','home');
 									?>
 									<td>
 										<?php 
-										echo $this->row->uid;
+										echo $this->row->uid . ' (J! ID: ' . $this->joomla_id . ')';
 										?>
 										<input type="hidden" class="detail" name="uid" id="uid" value="<?php echo $this->row->uid;?>" />
 									</td>
